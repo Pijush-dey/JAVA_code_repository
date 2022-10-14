@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Dijkstar_algorithm_implementation {
+public class Dijkstra_algorithm_implementation {
 
                          // Here I use Directed Weighted Graph.................
     ArrayList<Node>[] arr;
@@ -25,7 +25,7 @@ public class Dijkstar_algorithm_implementation {
         }
     }
 
-    Dijkstar_algorithm_implementation(List<Edge> edge, int nodes) {
+    Dijkstra_algorithm_implementation(List<Edge> edge, int nodes) {
         this.arr = new ArrayList[nodes];
         for (int i = 0; i < nodes; i++) {
             arr[i] = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Dijkstar_algorithm_implementation {
         }
     }
 
-    void dijkstar_algorithm(int nodes, int S){             // this algorithm is use for finding the minimum spanning tree
+    void dijkstra_algorithm(int nodes, int S){             // this algorithm is use for finding the minimum spanning tree
 
         PriorityQueue<Node> q = new PriorityQueue<>();
         boolean[] visited = new boolean[nodes];
@@ -81,9 +81,9 @@ public class Dijkstar_algorithm_implementation {
         System.out.print("Enter the value of vertex- ");
         int S = sc.nextInt();
         List<Edge> edge = Arrays.asList(new Edge(0, 1, 6),new Edge(0,3,1),new Edge(1,0,3), new Edge(1, 2, 7), new Edge(2, 0, 5), new Edge(2, 1, 4), new Edge(3, 2, 2),new Edge(2,3,1),new Edge(3,0,2));
-        Dijkstar_algorithm_implementation graph = new Dijkstar_algorithm_implementation(edge, nodes);
+        Dijkstra_algorithm_implementation graph = new Dijkstra_algorithm_implementation(edge, nodes);
 
-        graph.dijkstar_algorithm(nodes,S);
+        graph.dijkstra_algorithm(nodes,S);
 
         graph.display();
     }
