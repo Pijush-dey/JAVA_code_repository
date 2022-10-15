@@ -7,22 +7,22 @@ public class Connected_elements {
     static ArrayList<Integer>[] arr;
     static int[] graph_num;
     static int count=0;
-    Connected_elements(int nodes){
-        arr=new ArrayList[nodes];
-        for(int i=0;i<nodes;i++) {
+    Connected_elements(int vertices){
+        arr=new ArrayList[vertices];
+        for(int i=0;i<vertices;i++) {
             arr[i] = new ArrayList<>();
         }
     }
     void insert(int x, int y){
         arr[x].add(y);
     }
-    void dfs(int nodes){                    //<<----- Beginning of algorithm
-        int[] visited = new int[nodes];
-        this.graph_num=new int[nodes];
+    void dfs(int vertices){                    //<<----- Beginning of algorithm
+        int[] visited = new int[vertices];
+        this.graph_num=new int[vertices];
 
         Arrays.fill(visited, 0);
 
-        for(int i=0;i<nodes;i++){
+        for(int i=0;i<vertices;i++){
             if(visited[i]==0){
                 dfs1(i,visited);
                 count++;
@@ -48,10 +48,10 @@ public class Connected_elements {
     }
 
     public static void main(String[] args) {
-        System.out.print("Enter the number of nodes present in the Graph:- ");
+        System.out.print("Enter the number of vertices present in the Graph:- ");
         Scanner sc = new Scanner (System.in);
-        int nodes = sc.nextInt();
-        Connected_elements  graph =  new Connected_elements (nodes);
+        int vertices = sc.nextInt();
+        Connected_elements  graph =  new Connected_elements (vertices);
         graph.insert(0,1);
         graph.insert(1,2);
         graph.insert(1,3);
@@ -62,7 +62,7 @@ public class Connected_elements {
         graph.insert(5,6);
         graph.insert(6,7);
 
-        graph.dfs(nodes);
+        graph.dfs(vertices);
 
         System.out.println();
         System.out.println("Enter the first number");

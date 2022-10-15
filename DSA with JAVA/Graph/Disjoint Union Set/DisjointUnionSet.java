@@ -40,7 +40,7 @@ public class DisjointUnionSet {           // Union by Rank.
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number of nodes- ");
+        System.out.print("Enter the number of vertices- ");
         int n=sc.nextInt();
         DisjointUnionSet graph = new DisjointUnionSet(n);
 

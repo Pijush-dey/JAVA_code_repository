@@ -3,17 +3,17 @@ import java.util.*;
 public class BFS_algorithm {
                                  // Using BFS algorithm in Directed graph.............
     static ArrayList<Integer>[] arr;
-    BFS_algorithm(int nodes){
-        arr=new ArrayList[nodes];
-        for(int i=0;i<nodes;i++) {
+    BFS_algorithm(int vertices){
+        arr=new ArrayList[vertices];
+        for(int i=0;i<vertices;i++) {
             arr[i] = new ArrayList<>();
         }
     }
     void insert(int x, int y){
         arr[x].add(y);
     }
-    void bfs(int nodes){                     //<<----- Beginning of algorithm
-        int[] visited = new int[nodes];
+    void bfs(int vertices){                     //<<----- Beginning of algorithm
+        int[] visited = new int[vertices];
         Arrays.fill(visited, 0);
         Queue<Integer> q = new LinkedList<>();
 
@@ -33,16 +33,16 @@ public class BFS_algorithm {
     }                                        //<<----- End of algorithm
 
     public static void main(String[] args) {
-        System.out.print("Enter the number of nodes present in the Graph:- ");
+        System.out.print("Enter the number of vertices present in the Graph:- ");
         Scanner sc = new Scanner (System.in);
-        int nodes = sc.nextInt();
-        BFS_algorithm graph =  new BFS_algorithm(nodes);
+        int vertices = sc.nextInt();
+        BFS_algorithm graph =  new BFS_algorithm(vertices);
         graph.insert(0,1);
         graph.insert(1,2);
         graph.insert(1,3);
         graph.insert(2,3);
         graph.insert(3,0);
 
-        graph.bfs(nodes);
+        graph.bfs(vertices);
     }
 }

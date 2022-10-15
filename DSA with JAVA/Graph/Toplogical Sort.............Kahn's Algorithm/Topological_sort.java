@@ -8,25 +8,25 @@ public class Topological_sort {
                           // Here, we sue Directed Graph
     static ArrayList<Integer>[] arr;
     static int[] inDegree;
-    Topological_sort(int nodes){
-        arr=new ArrayList[nodes];
-        for(int i=0;i<nodes;i++) {
+    Topological_sort(int vertices){
+        arr=new ArrayList[vertices];
+        for(int i=0;i<vertices;i++) {
             arr[i] = new ArrayList<>();
         }
     }
     void insert(int x, int y){
         arr[x].add(y);
     }
-    void display(int nodes){
-        this.inDegree = new int[nodes];
-        for (int i=0;i<nodes;i++){
+    void display(int vertices){
+        this.inDegree = new int[vertices];
+        for (int i=0;i<vertices;i++){
             for (int x:arr[i])
                 inDegree[x]++;
         }
 
         Queue<Integer> q = new LinkedList<>();
 
-        for (int i=0;i<nodes;i++){
+        for (int i=0;i<vertices;i++){
             if(inDegree[i]==0)
                 q.add(i);
         }
@@ -40,16 +40,16 @@ public class Topological_sort {
         }
     }
     public static void main(String[] args) {
-        System.out.print("Enter the number of nodes present in the Graph:- ");
+        System.out.print("Enter the number of vertices present in the Graph:- ");
         Scanner sc = new Scanner (System.in);
-        int nodes = sc.nextInt();
-        Topological_sort graph =  new Topological_sort(nodes);
+        int vertices = sc.nextInt();
+        Topological_sort graph =  new Topological_sort(vertices);
         graph.insert(3,1);
         graph.insert(3,2);
         graph.insert(1,2);
         graph.insert(2,0);
 
         System.out.println("Topological sort is-- ");
-        graph.display(nodes);
+        graph.display(vertices);
     }
 }

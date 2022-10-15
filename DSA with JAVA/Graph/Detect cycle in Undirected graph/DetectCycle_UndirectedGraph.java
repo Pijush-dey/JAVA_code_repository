@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class DetectCycle_UndirectedGraph {
     static ArrayList<Integer>[] arr;
-    DetectCycle_UndirectedGraph(int nodes){
-        arr=new ArrayList[nodes];
-        for(int i=0;i<nodes;i++) {
+    DetectCycle_UndirectedGraph(int vertices){
+        arr=new ArrayList[vertices];
+        for(int i=0;i<vertices;i++) {
             arr[i] = new ArrayList<>();
         }
     }
     void insert(int x, int y){
         arr[x].add(y);
     }
-    boolean cycle_detect(int nodes){                    //<<----- Beginning of algorithm
-        int[] visited = new int[nodes];
+    boolean cycle_detect(int vertices){                    //<<----- Beginning of algorithm
+        int[] visited = new int[vertices];
         Arrays.fill(visited, 0);
 
-        for(int i=0;i<nodes;i++){
+        for(int i=0;i<vertices;i++){
             if(visited[i]==0){
                 if(dfs(i,visited,-1))
                     return true;
@@ -39,15 +39,15 @@ public class DetectCycle_UndirectedGraph {
     }                                    //<<----- End of algorithm
 
     public static void main(String[] args) {
-        System.out.print("Enter the number of nodes present in the Graph:- ");
+        System.out.print("Enter the number of vertices present in the Graph:- ");
         Scanner sc = new Scanner (System.in);
-        int nodes = sc.nextInt();
-        DetectCycle_UndirectedGraph  graph =  new DetectCycle_UndirectedGraph (nodes);
+        int vertices = sc.nextInt();
+        DetectCycle_UndirectedGraph  graph =  new DetectCycle_UndirectedGraph (vertices);
         graph.insert(0,1);
         graph.insert(1,2);
         graph.insert(2,3);
         graph.insert(3,4);
 
-        System.out.println("There is a cycle in the graph or not- "+graph.cycle_detect(nodes));
+        System.out.println("There is a cycle in the graph or not- "+graph.cycle_detect(vertices));
     }
 }
