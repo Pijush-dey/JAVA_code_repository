@@ -7,7 +7,7 @@ public class PriorityQueueQuestion {
         int pos;
         int arr[] = {3,5,11,35,90,4,1,2};
 
-        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());   // Setting the priority queue as MIN HEAP
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());   // Setting the priority queue as MAX HEAP
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Find the K th smallest number ");
